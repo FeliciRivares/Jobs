@@ -6,7 +6,7 @@ const rapidApiKey = RAPID_API_KEY
 
 export const useFetch = (endpoint, query) => {
   const [data, setData] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
   const options = {
@@ -33,12 +33,12 @@ export const useFetch = (endpoint, query) => {
 
   useEffect(() => {
     fetchData()
-  },[])
+  }, [])
 
-  const refreshFetchData = () =>{
+  const refreshFetchData = () => {
     setIsLoading(true)
     fetchData()
-  } 
+  }
 
-  return{data, isLoading, error, refreshFetchData}
+  return { data, isLoading, error, refreshFetchData }
 }
