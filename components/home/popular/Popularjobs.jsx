@@ -14,8 +14,8 @@ const Popularjobs = () => {
     query: 'React developer',
     num_pages: 1
   })
-  const handleCardPress = () => {
-    router.push(`/job-details/${item.job_id}`)
+  const handleCardPress = (item) => {
+    router.push(`/job-details/${item?.job_id}`)
     setSelectedJob(item.job_id)
   }
 
